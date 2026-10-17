@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=WordBench
+GenericName=Word Processor
+Comment=Terminal word processor in the spirit of the classic DOS word processors
+Exec=wordbench %f
+Terminal=true
+Icon=accessories-text-editor
+Categories=Office;WordProcessor;
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;text/plain;
+Keywords=word;processor;docx;retro;writer;

@@ -1,0 +1,31 @@
+[package]
+name = "wordbench"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+authors = ["William Lampley <wlampley@outlook.com>"]
+description = "A terminal word processor in the spirit of the classic DOS word processors"
+license = "MIT OR Apache-2.0"
+default-run = "wordbench"
+readme = "README.md"
+repository = "https://github.com/william-lampley/WordBench"
+homepage = "https://github.com/william-lampley/WordBench"
+keywords = ["word-processor", "terminal", "docx", "writing", "tui"]
+categories = ["text-editors", "command-line-utilities"]
+exclude = ["/.github"]
+
+[dependencies]
+ratatui = "0.30.2"
+zip = { version = "9.0.4", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+quick-xml = "0.42.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+unicode-width = "0.2.2"
+png = { version = "0.18", default-features = false }
+jpeg-decoder = { version = "0.3", default-features = false }
+flate2 = { version = "1.1", default-features = false, features = ["zlib-rs"] }
+arboard = { version = "3.7.0", default-features = false, features = ["wayland-data-control"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
