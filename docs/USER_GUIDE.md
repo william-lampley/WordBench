@@ -125,8 +125,9 @@ defaults, use Tools > Settings (see [Settings](#settings)).
 
 ## Two keyboards
 
-WordBench has two complete sets of keys. Press **Alt+K** at any time to
-switch between them. Your choice is remembered.
+WordBench has two complete sets of keys. **Modern** is the default, with
+the menu bar always on screen. Press **Alt+K** at any time to switch
+between them. Your choice is remembered.
 
 **Classic** uses the function keys the way the classic DOS word
 processors did:

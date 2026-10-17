@@ -439,8 +439,8 @@ pub const MENUS: &[Menu] = {
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default, Hash)]
 pub enum Keymap {
-    #[default]
     Classic,
+    #[default]
     Modern,
 }
 

@@ -82,7 +82,7 @@ pub struct Config {
 impl Default for Config {
     fn default() -> Self {
         Config {
-            keymap: Keymap::Classic,
+            keymap: Keymap::Modern,
             theme: Theme::Blue,
             lang: "en_US".into(),
             author: crate::platform::user_name(),
@@ -95,15 +95,20 @@ impl Default for Config {
 
 impl Config {
     pub fn load() -> Config {
-        let mut c = Config::default();
         let text = std::fs::read_to_string(config_dir().join("config")).unwrap_or_default();
+        Config::parse(&text)
+    }
+
+    /// Settings from the text of a settings file (defaults for anything missing).
+    pub fn parse(text: &str) -> Config {
+        let mut c = Config::default();
         for line in text.lines() {
             let Some((k, v)) = line.split_once('=') else {
                 continue;
             };
             match (k.trim(), v.trim()) {
-                ("keymap", "modern") => c.keymap = Keymap::Modern,
-                ("keymap", _) => c.keymap = Keymap::Classic,
+                ("keymap", "classic" | "wp") => c.keymap = Keymap::Classic,
+                ("keymap", _) => c.keymap = Keymap::Modern,
                 ("theme", t) => c.theme = Theme::from_key(t),
                 ("lang", v) if !v.is_empty() => c.lang = v.to_string(),
                 ("author", v) if !v.is_empty() => c.author = v.to_string(),

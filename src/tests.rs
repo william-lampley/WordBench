@@ -995,3 +995,12 @@ fn show_readme_screen() {
     a.run(crate::commands::Cmd::RevealCodes);
     screen(&mut a, 80, 20);
 }
+
+#[test]
+fn modern_keyboard_is_the_default() {
+    assert_eq!(Config::parse("").keymap, Keymap::Modern);
+    assert_eq!(Config::parse("theme=dark\n").keymap, Keymap::Modern);
+    assert_eq!(Config::parse("keymap=classic\n").keymap, Keymap::Classic);
+    assert_eq!(Config::parse("keymap=wp\n").keymap, Keymap::Classic);
+    assert_eq!(Config::parse("keymap=modern\n").keymap, Keymap::Modern);
+}

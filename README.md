@@ -31,9 +31,10 @@ copy and paste with your other programs.
 
 ## Highlights
 
-- **Two keyboards, switchable at any time (Alt+K).** *Classic*
-  function keys (F10 save, F7 exit, F6 bold, Alt+F3 Reveal Codes) or *Modern* keys
-  (Ctrl+S, Ctrl+B, Ctrl+Z…). Everything is also on a menu bar and in a
+- **Two keyboards, switchable at any time (Alt+K).** *Modern* keys
+  (Ctrl+S, Ctrl+B, Ctrl+Z…) with the menu bar always on screen, which is
+  the default, or *Classic* function keys (F10 save, F7 exit, F6 bold,
+  Alt+F3 Reveal Codes). Everything is also on a menu bar and in a
   searchable command palette (Alt+X), so the whole program works from the
   keyboard. The mouse works too.
 - **Reveal Codes.** A split view of the formatting codes (`[Bold]`,
@@ -106,7 +107,7 @@ each one.
 wordbench                     # a new document
 wordbench report.docx         # open a Word file
 wb notes.wbd                  # `wb` is the same program
-wordbench --modern            # start with Word-style keys
+wordbench --classic           # start with the classic function keys
 wordbench --convert report.docx report.pdf   # convert without opening
 ```
 
